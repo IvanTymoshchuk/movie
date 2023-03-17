@@ -26,12 +26,12 @@ function findMovies(){
 
 function displayMovieList(movies){
     searchList.innerHTML = "";
-    for(let idx = 0; idx < movies.length; idx++){
+    for(let i = 0; i < movies.length; i++){
         let movieListItem = document.createElement('div');
-        movieListItem.dataset.id = movies[idx].imdbID; // setting movie id in  data-id
+        movieListItem.dataset.id = movies[i].imdbID; // setting movie id in  data-id
         movieListItem.classList.add('search-list-item');
-        if(movies[idx].Poster != "N/A")
-            moviePoster = movies[idx].Poster;
+        if(movies[i].Poster != "N/A")
+            moviePoster = movies[i].Poster;
         else 
             moviePoster = "image_not_found.png";
 
@@ -40,8 +40,8 @@ function displayMovieList(movies){
             <img src = "${moviePoster}">
         </div>
         <div class = "search-item-info">
-            <h3>${movies[idx].Title}</h3>
-            <p>${movies[idx].Year}</p>
+            <h3>${movies[i].Title}</h3>
+            <p>${movies[i].Year}</p>
         </div>
         `;
         searchList.appendChild(movieListItem);
